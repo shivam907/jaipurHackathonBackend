@@ -12,7 +12,7 @@ body {
 }
 .signUpBody {
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/signUpBg.jpeg");
+    url("/img/signUpBg.jpeg");
   background-position: center;
   background-size: cover;
 }
@@ -1537,7 +1537,7 @@ textarea {
   /* height: auto; */
   height: 49.5rem;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../hero.jpg");
+    url("img/hero.jpg");
   background-size: cover;
   display: flex;
   align-items: center;
