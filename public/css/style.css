@@ -1537,7 +1537,7 @@ textarea {
   /* height: auto; */
   height: 49.5rem;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/hero.jpg");
+    url("/img/hero.jpg");
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1669,21 +1669,34 @@ textarea {
   color: #242a30;
 }
 
+.pbox:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
 .pbox {
   width: 27.9rem;
   height: 26.1rem;
   border-radius: 10px;
   overflow: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 .pimg {
-  background: url("/img/christmas.jpeg");
+  /* background: url("../img/thresher1.jpg"); */
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 17.4rem;
   background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 20%;
   /* width: fit-content; */
+}
+.pcontent h1,
+.pcontent p {
+  text-transform: capitalize;
 }
 
 .pcontent {
@@ -2663,4 +2676,58 @@ textarea {
   letter-spacing: 0.2rem;
   font-size: 1.6rem;
   color: #ffffff99;
+}
+.indCont1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+.indCont1 h1 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.indCont1 p {
+  /* text-align: center; */
+  line-height: 1.6;
+  letter-spacing: 0.2rem;
+  font-size: 1.6rem;
+  color: #ffffff99;
+}
+
+.pimg img {
+  width: 100%;
+  /* height:  */
+  height: 17.4rem;
+}
+/* img{
+  transition: transform .2s;
+  
+}
+img:hover{
+  transform:scale(1.1);
+} */
+.adminDetails {
+  width: 120rem;
+  margin: 5rem auto;
+}
+.adminHead {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.adminDetails .pbox {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.admi2 .pcontent p {
+  text-align: left !important;
+  align-self: flex-start;
+  margin-left: 3rem;
 }

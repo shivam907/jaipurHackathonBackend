@@ -59,7 +59,7 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 userSchema.statics.findByCredentials = async (mobile, password) => {
-  const user = await User.findOne({ mobile });
+  const user = await User.findOne({ mobileNumber: mobile });
   console.log(user);
   if (!user) {
     throw new Error("Unable to login");

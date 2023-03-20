@@ -21,12 +21,41 @@ const postUserData = async (req, res, next) => {
     // await sendMail(req.body.email);
     const token = await user.generateAuthToken();
     await user.save();
-    return res.json(user, {}, {}, token);
+
+    return res.redirect("/dashboard");
   } catch (err) {
     console.log(err.message);
     res.status(400).send("Error");
   }
 };
+const login = async (req, res, next) => {
+  console.log("Loginp : \n", req.session.currentUser);
+  console.log(req.body);
+  try {
+    const user = await User.findByCredentials(
+      req.body.mobile,
+      req.body.password
+    );
+    console.log("hlo hlo");
+    console.log("user: ", user);
+    const token = await user.generateAuthToken();
+    req.session.token = token;
+
+    req.session.user = await user;
+    // res.redirect("/profile");
+    req.session.login = true;
+    console.log("hnji");
+    return res.redirect("/dashboard");
+  } catch (err) {
+    // console.log(e);
+    res.status(400).send({ error: err.message });
+  }
+};
+const logout = async (req, res, next) => {
+  req.session.destroy();
+  res.redirect("/");
+};
+
 const logInPage = async (req, res) => {
   res.render("login");
 };
@@ -39,6 +68,13 @@ const forgot = async (req, res) => {
 const signUpPage = async (req, res) => {
   res.render("signUp");
 };
+const dashboard = async (req, res) => {
+  if (req.session.user) {
+    res.render("dashboard");
+  } else {
+    res.redirect("/login");
+  }
+};
 
 module.exports = {
   logInPage,
@@ -47,4 +83,6 @@ module.exports = {
   getUserData,
   aboutUs,
   forgot,
+  login,
+  dashboard,
 };
