@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const upload = require("../middleware/upload");
 require("dotenv").config();
 
 const nodemailer = require("nodemailer");
@@ -76,6 +77,10 @@ const dashboard = async (req, res) => {
   }
 };
 
+const tools = (req, res) => {
+  res.render("tools");
+};
+
 module.exports = {
   logInPage,
   signUpPage,
@@ -85,4 +90,5 @@ module.exports = {
   forgot,
   login,
   dashboard,
+  tools,
 };

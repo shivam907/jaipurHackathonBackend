@@ -1531,6 +1531,9 @@ textarea {
   color: #0d7a5f;
   font-weight: 700;
 }
+a {
+  text-decoration: none;
+}
 
 .indexHero {
   width: 100%;

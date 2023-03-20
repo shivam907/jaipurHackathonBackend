@@ -3,7 +3,11 @@
 
 const mongoose = require("mongoose");
 require("dotenv").config();
+
+const Grid = require("gridfs-stream");
 const express = require("express");
+const upload = require("./middleware/upload");
+const multer = require("multer");
 const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
@@ -21,6 +25,37 @@ app.use((req, res, next) => {
   );
   next();
 });
+const upload1 = multer({ dest: "uploads/" });
+
+let gfs;
+
+const conn = mongoose.connection;
+conn.once("open", function () {
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection("photos");
+});
+app.get("/file/:filename", async (req, res) => {
+  try {
+    const file = await gfs.files.findOne({ filename: req.params.filename });
+    const readStream = gfs.createReadStream(file.filename);
+    readStream.pipe(res);
+  } catch (error) {
+    res.send("not found");
+  }
+});
+
+app.delete("/file/:filename", async (req, res) => {
+  try {
+    await gfs.files.deleteOne({ filename: req.params.filename });
+    res.send("success");
+  } catch (error) {
+    console.log(error);
+    res.send("An error occured.");
+  }
+});
+app.post("/upload", upload1.single("image"), (req, res) => {
+  // handle file upload
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -33,6 +68,23 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.post("/upload", upload1.single("image"), (req, res) => {
+  const newImage = new Image({
+    name: req.file.originalname,
+    data: req.file.buffer,
+    contentType: req.file.mimetype,
+  });
+
+  newImage.save((err, image) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(image);
+    }
+  });
+});
+
+// app.use("/file", upload);
 app.use("/", mainRoutes);
 app.use(express.static(path.join(__dirname, "public")));
 
