@@ -86,6 +86,9 @@ app.post("/upload", upload1.single("image"), (req, res) => {
 
 // app.use("/file", upload);
 app.use("/", mainRoutes);
+app.get("/", (req, res) => {
+  res.render("index");
+});
 app.use(express.static(path.join(__dirname, "public")));
 
 const url = process.env.URL;

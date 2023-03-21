@@ -12,7 +12,7 @@ body {
 }
 .signUpBody {
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/signUpBg.jpeg");
+    url("/img/hero1.jpeg");
   background-position: center;
   background-size: cover;
 }
@@ -1510,7 +1510,7 @@ textarea {
 }
 
 .logo {
-  height: 3rem;
+  width: 10rem;
 }
 
 .navOpt {
