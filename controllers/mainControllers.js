@@ -1,5 +1,4 @@
 const User = require("../models/user");
-const upload = require("../middleware/upload");
 require("dotenv").config();
 
 const nodemailer = require("nodemailer");
