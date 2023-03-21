@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:digitalocean": " npm install express mongoose dotenv multer multer-gridfs-storage gridfs-stream --force"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,8 @@
     "mongoose": "^7.0.2",
     "nodemailer": "^6.9.1",
     "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
