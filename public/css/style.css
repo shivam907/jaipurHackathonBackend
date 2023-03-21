@@ -2746,3 +2746,8 @@ img:hover{
   align-items: flex-end;
   gap: 1rem;
 }
+
+.box a {
+  font-size: 1.8rem;
+  color: #0d7a5f;
+}

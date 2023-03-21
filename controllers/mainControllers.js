@@ -22,6 +22,7 @@ const postUserData = async (req, res, next) => {
     const token = await user.generateAuthToken();
     await user.save();
 
+    req.session.user = await user;
     return res.redirect("/dashboard");
   } catch (err) {
     console.log(err.message);
