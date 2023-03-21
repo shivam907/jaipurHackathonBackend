@@ -2239,7 +2239,8 @@ a {
   flex-direction: column;
   gap: 1rem;
 }
-.discoverFoot p {
+.discoverFoot p,
+.discoverFoot a {
   font-size: 2rem;
   color: #fff;
 }

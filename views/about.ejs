@@ -1,127 +1,160 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: #e5f8ec;
+      }
 
-html {
-  box-sizing: border-box;
-}
+      html {
+        box-sizing: border-box;
+      }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
 
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
+      /* .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        /* padding-top: 20px; *
+      } */
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0.8, 0, 0.2);
+        margin: 20px;
+        border-radius: 25px;
+        background-color: #fff;
+        border: 2px solid #73ad21;
+      }
 
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
+      .about-section {
+        background-image: url("https://s01.sgp1.digitaloceanspaces.com/large/875774-87404-ktpqnidkvy-1523973065.jpg");
+        background-color: #cccccc;
 
-.container {
-  padding: 0 16px;
-}
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 200px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+      }
 
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+      .container {
+        /* height: 100%; */
+        padding: 15px 16px;
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: 50px;
+        align-self: flex-end;
+      }
 
-.title {
-  color: grey;
-}
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-grow: 1;
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
+        /* gap: 2rem; */
+      }
+      .title {
+        color: grey;
+      }
 
-.button:hover {
-  background-color: #555;
-}
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-</style>
-</head>
-<body>
+      .button:hover {
+        background-color: #555;
+      }
 
-<div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
-</div>
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+    </style>
+  </head>
 
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>jane@example.com</p>
-        <p><button class="button">Contact</button></p>
+  <body>
+    <div class="about-section">
+      <h1 style="font-size: 300%; text-align: center; margin-bottom: 100px">
+        About Us
+      </h1>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="text-align: center" top-bottom margin>Who We Are?</h2>
+
+            <p style="text-align: justify">
+              a leader in providing innovative solutions to the challenges faced
+              by small-scale farmers.We understand the difficulties that farmers
+              encounter in their daily operations ,including limited access to
+              farming equipment, and we are committed to helping them overcome
+              these challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="text-align: center">What We Do ?</h2>
+
+            <p style="text-align: justify">
+              Our company provides a hassle-free online marketplace where
+              farmers can or buy the latest farming equipment and tools,
+              enabling them to optimize their operations and maximize their
+              yields.With our innovative solutions, we are dedicated to
+              supporting the growth and sustainability of the agriculture
+              industry and helping farmers achieve their full potential.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="text-align: center">What Do We Seek For?</h2>
+
+            <p style="text-align: justify">
+              We are seeking to provide farmers with access to the latest
+              farming equipment and tools, helping them overcome the challenges
+              they face in their daily operations and maximize their
+              productivity and profitability.We strive to be a one-stop-shopfor
+              all farming equipment needs and offer hassle-free rental and
+              purchase options through our marketplace.Our goal is to support
+              the growth and sustainability of the agriculture industry by
+              providing innovative solutions that help small-scale farmers
+              achieve their full potential
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team3.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

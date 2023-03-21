@@ -79,10 +79,13 @@ const dashboard = async (req, res) => {
 const tools = (req, res) => {
   res.render("tools");
 };
+
 const property = (req, res) => {
   res.render("property");
 };
-
+const terms = (req, res) => {
+  res.render("terms");
+};
 module.exports = {
   logInPage,
   signUpPage,
@@ -94,4 +97,5 @@ module.exports = {
   dashboard,
   tools,
   property,
+  terms,
 };
