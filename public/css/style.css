@@ -1526,9 +1526,9 @@ textarea {
   color: #000;
 }
 
-.navOpt a:last-child {
+.in {
   padding: 13px 20px;
-  color: #0d7a5f;
+  color: #0d7a5f !important;
   font-weight: 700;
 }
 a {
@@ -2733,4 +2733,15 @@ img:hover{
   text-align: left !important;
   align-self: flex-start;
   margin-left: 3rem;
+}
+
+.email select {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+}
+.row {
+  display: flex !important;
+  align-items: flex-end;
+  gap: 1rem;
 }

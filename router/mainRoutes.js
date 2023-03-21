@@ -10,6 +10,7 @@ router.get("/dashboard", mainControllers.dashboard);
 router.post("/postUser", mainControllers.postUserData);
 router.post("/log", mainControllers.login);
 router.get("/tools", mainControllers.tools);
+router.get("/property", mainControllers.property);
 // router.post("/tool", mainControllers.tool);
 // router.post("/upload", upload.single("file"), async (req, res) => {
 //   if (req.file === undefined) return res.send("you must select a file.");
